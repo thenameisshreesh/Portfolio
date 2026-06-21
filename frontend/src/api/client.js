@@ -1,7 +1,13 @@
 import axios from 'axios';
 
+// In development, use the local Flask server.
+// In production (Vercel), API is served from the same origin via rewrites.
+const BASE_URL = import.meta.env.PROD
+  ? '/api'
+  : import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api',
+  baseURL: BASE_URL,
   timeout: 10000,
   headers: { 'Content-Type': 'application/json' },
 });
