@@ -29,8 +29,8 @@
   --space-md:  16px;
   --space-lg:  28px;
   --space-xl:  56px;
-  --space-2xl: 96px;
-  --space-3xl: 140px;
+  --space-2xl: 100px;
+  --space-3xl: 160px;
 
   /* Border Radius */
   --radius-sm:   6px;
@@ -64,6 +64,6 @@
     --space-lg:  32px;
     --space-xl:  64px;
     --space-2xl: 128px;
-    --space-3xl: 160px;
+    --space-3xl: 200px;
   }
 }

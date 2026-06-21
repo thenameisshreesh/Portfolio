@@ -45,32 +45,37 @@ body {
 /* ── Sections ────────────────────────────────────────── */
 .section {
   min-height: 100vh;
-  padding: var(--space-2xl) var(--space-lg);
+  padding: var(--space-3xl) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+  width: 100%;
 }
 
 .section + .section {
   padding-top: var(--space-3xl);
+  margin-top: calc(var(--space-lg) * 1.5);
 }
 
 @media (max-width: 480px) {
   .section {
-    padding: var(--space-xl) var(--space-md);
+    padding: var(--space-2xl) var(--space-md);
     min-height: auto;
   }
   .section + .section {
     padding-top: var(--space-xl);
+    margin-top: var(--space-lg);
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
   .section {
-    padding: var(--space-2xl) var(--space-lg);
-    min-height: auto;
+    padding: var(--space-3xl) var(--space-lg);
+  }
+  .section + .section {
+    margin-top: var(--space-xl);
   }
 }
 
@@ -165,11 +170,13 @@ body {
   }
 }
 
-.btn-glow:hover {
-  background: var(--primary);
-  color: var(--bg);
-  box-shadow: var(--shadow-neon-primary);
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .btn-glow:hover {
+    background: var(--primary);
+    color: var(--bg);
+    box-shadow: var(--shadow-neon-primary);
+    transform: translateY(-2px);
+  }
 }
 
 /* ── Input ───────────────────────────────────────────── */

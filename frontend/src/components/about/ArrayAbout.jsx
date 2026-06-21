@@ -77,7 +77,7 @@ export default function ArrayAbout() {
 
   return (
     <section id="about" aria-label="About me — Array data structure" style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 16px', zIndex: 1 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 16px', zIndex: 1, minHeight: '100dvh' }}>
         <motion.div className="ds-label" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>ARRAY — Ordered, Indexed Access</motion.div>
         <motion.h2 className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>About <span>Me</span></motion.h2>
         <div className="neon-divider" />

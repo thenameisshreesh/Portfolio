@@ -138,7 +138,7 @@ export default function StackHero() {
 
   return (
     <section id="hero" ref={containerRef} aria-label="Introduction — Stack data structure" style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px 16px', overflow: 'hidden', zIndex: 1 }} className="hero-container">
+      <div style={{ position: 'sticky', top: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px 16px', overflow: 'hidden', zIndex: 1, minHeight: '100dvh' }} className="hero-container">
         <style>{`
           @media (min-width: 481px) {
             .hero-container { padding: 20px 60px !important; }

@@ -145,7 +145,7 @@ export default function LinkedListExperience() {
 
   return (
     <section id="experience" className="section" aria-label="Experience — Linked List data structure" style={{ zIndex: 1, position: 'relative', minHeight: '100vh' }}>
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 0', width: '100%' }}>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 0', width: '100%', minHeight: '100dvh' }}>
         <motion.div className="ds-label" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>LINKED LIST — Sequential Traversal</motion.div>
         <motion.h2 className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>My <span>Journey</span></motion.h2>
         <div className="neon-divider" />
