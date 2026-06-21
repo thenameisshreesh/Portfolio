@@ -77,20 +77,25 @@ export default function ArrayAbout() {
 
   return (
     <section id="about" aria-label="About me — Array data structure" style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 20px', zIndex: 1 }}>
+      <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px 16px', zIndex: 1 }}>
         <motion.div className="ds-label" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>ARRAY — Ordered, Indexed Access</motion.div>
         <motion.h2 className="section-title" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>About <span>Me</span></motion.h2>
         <div className="neon-divider" />
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0', marginBottom: '32px', fontFamily: "'JetBrains Mono',monospace", fontSize: '0.65rem', color: 'rgba(0,245,255,0.35)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0', marginBottom: '24px', fontFamily: "'JetBrains Mono',monospace", fontSize: '0.65rem', color: 'rgba(0,245,255,0.35)' }}>
           <span>about[</span><motion.span key={activeIndex} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }} style={{ color: item.color, fontWeight: 700, margin: '0 2px' }}>{activeIndex}</motion.span><span>] = </span>
           <motion.span key={`key-${activeIndex}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: item.color, marginLeft: '4px' }}>"{item.key}"</motion.span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', paddingTop: '40px' }}>
-          <div style={{ display: 'flex', alignItems: 'center', fontFamily: "'JetBrains Mono',monospace", fontSize: '4rem', color: 'rgba(0,245,255,0.2)', paddingBottom: '4px', marginRight: '4px', fontWeight: 300 }}>[</div>
+        <div className="array-container" style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', paddingTop: '40px', width: '100%', maxWidth: '100vw', overflowX: 'auto' }}>
+          <style>{`
+            @media (max-width: 768px) {
+              .array-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; padding-bottom: 20px; }
+            }
+          `}</style>
+          <div className="array-bracket" style={{ display: 'flex', alignItems: 'center', fontFamily: "'JetBrains Mono',monospace", fontSize: 'clamp(2rem, 8vw, 4rem)', color: 'rgba(0,245,255,0.2)', paddingBottom: '4px', marginRight: '4px', fontWeight: 300 }}>[</div>
           
-          <div style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
+          <div className="array-wrap" style={{ display: 'flex', alignItems: 'center', position: 'relative' }}>
             {/* Sliding Array Pointer */}
             <motion.div
               animate={{ left: activeIndex * 240 + 120 }}
@@ -117,7 +122,7 @@ export default function ArrayAbout() {
             ))}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', fontFamily: "'JetBrains Mono',monospace", fontSize: '4rem', color: 'rgba(0,245,255,0.2)', paddingBottom: '4px', marginLeft: '4px', fontWeight: 300 }}>]</div>
+          <div className="array-bracket" style={{ display: 'flex', alignItems: 'center', fontFamily: "'JetBrains Mono',monospace", fontSize: 'clamp(2rem, 8vw, 4rem)', color: 'rgba(0,245,255,0.2)', paddingBottom: '4px', marginLeft: '4px', fontWeight: 300 }}>]</div>
         </div>
       </div>
     </section>

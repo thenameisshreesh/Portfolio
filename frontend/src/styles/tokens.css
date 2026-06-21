@@ -23,13 +23,13 @@
   --text-muted:  rgba(232, 240, 255, 0.5);
   --text-dim:    rgba(232, 240, 255, 0.3);
 
-  /* Spacing */
+  /* Spacing — Mobile-first base */
   --space-xs:  4px;
   --space-sm:  8px;
   --space-md:  16px;
-  --space-lg:  32px;
-  --space-xl:  64px;
-  --space-2xl: 128px;
+  --space-lg:  24px;
+  --space-xl:  48px;
+  --space-2xl: 80px;
 
   /* Border Radius */
   --radius-sm:   6px;
@@ -55,4 +55,13 @@
   --shadow-neon-primary: 0 0 20px rgba(0, 245, 255, 0.3), 0 0 60px rgba(0, 245, 255, 0.1);
   --shadow-neon-secondary: 0 0 20px rgba(138, 43, 226, 0.4), 0 0 60px rgba(138, 43, 226, 0.15);
   --shadow-neon-accent: 0 0 20px rgba(0, 255, 159, 0.3), 0 0 60px rgba(0, 255, 159, 0.1);
+}
+
+/* ── Desktop spacing overrides ──────────────────── */
+@media (min-width: 768px) {
+  :root {
+    --space-lg:  32px;
+    --space-xl:  64px;
+    --space-2xl: 128px;
+  }
 }

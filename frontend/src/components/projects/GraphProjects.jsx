@@ -79,6 +79,12 @@ export default function GraphProjects() {
     return () => window.removeEventListener('resize', update);
   }, []);
 
+  // Responsive node positions — scale down for smaller screens
+  const responsivePositions = NODE_POSITIONS.map(p => {
+    const scale = Math.min(1, Math.max(0.45, stageSize.w / 860));
+    return { x: p.x * scale, y: p.y * scale, z: p.z * scale };
+  });
+
   useEffect(() => {
     if (activeIdx !== null) {
       const p = NODE_POSITIONS[activeIdx];
@@ -154,7 +160,7 @@ export default function GraphProjects() {
         initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
         style={{
           width: '100%', maxWidth: '860px',
-          height: '540px',
+          height: 'min(540px, 55vh)',
           position: 'relative',
           perspective: '800px',
           perspectiveOrigin: '50% 50%',

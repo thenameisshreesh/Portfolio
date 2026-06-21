@@ -64,8 +64,8 @@ export default function Navbar() {
           position: 'fixed',
           top: 0, left: 0, right: 0,
           zIndex: 1000,
-          padding: '0 32px',
-          height: '72px',
+          padding: '0 16px',
+          height: '60px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
@@ -80,10 +80,10 @@ export default function Navbar() {
         }}
       >
         {/* Logo */}
-        <a href="#hero" aria-label="Home" style={{ textDecoration: 'none' }}>
+        <a href="#hero" aria-label="Home" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <span style={{
             fontFamily: "'JetBrains Mono', monospace",
-            fontSize: '1.1rem',
+            fontSize: '0.95rem',
             fontWeight: 700,
             color: '#00F5FF',
             textShadow: '0 0 20px rgba(0,245,255,0.5)',
@@ -98,7 +98,7 @@ export default function Navbar() {
           style={{
             display: 'flex',
             listStyle: 'none',
-            gap: '4px',
+            gap: '2px',
             alignItems: 'center',
           }}
           className="nav-desktop"
@@ -115,13 +115,13 @@ export default function Navbar() {
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center',
-                    padding: '6px 14px',
+                    padding: '4px 10px',
                     borderRadius: '8px',
                     textDecoration: 'none',
                     color: isActive ? '#00F5FF' : 'rgba(232,240,255,0.6)',
                     background: isActive ? 'rgba(0,245,255,0.08)' : 'transparent',
                     transition: 'all 0.2s ease',
-                    fontSize: '0.85rem',
+                    fontSize: '0.8rem',
                     fontWeight: 500,
                     letterSpacing: '0.02em',
                   }}
@@ -140,7 +140,7 @@ export default function Navbar() {
                 >
                   {item.label}
                   <span style={{
-                    fontSize: '0.55rem',
+                    fontSize: '0.5rem',
                     fontFamily: "'JetBrains Mono', monospace",
                     color: isActive ? '#8A2BE2' : 'rgba(138,43,226,0.4)',
                     letterSpacing: '0.08em',
@@ -182,7 +182,7 @@ export default function Navbar() {
           exit={{ opacity: 0 }}
           style={{
             position: 'fixed',
-            top: '72px', left: 0, right: 0,
+            top: '60px', left: 0, right: 0,
             background: 'rgba(11,15,25,0.97)',
             backdropFilter: 'blur(20px)',
             zIndex: 999,
@@ -225,6 +225,11 @@ export default function Navbar() {
         @media (max-width: 768px) {
           .nav-desktop { display: none !important; }
           .nav-hamburger { display: flex !important; flex-direction: column; }
+        }
+        @media (min-width: 769px) {
+          nav { padding: 0 32px !important; height: 72px !important; }
+          .nav-desktop a { padding: 6px 14px !important; font-size: 0.85rem !important; }
+          .nav-desktop a span { font-size: 0.55rem !important; }
         }
       `}</style>
     </>

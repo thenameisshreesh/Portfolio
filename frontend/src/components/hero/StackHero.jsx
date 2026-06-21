@@ -138,25 +138,38 @@ export default function StackHero() {
 
   return (
     <section id="hero" ref={containerRef} aria-label="Introduction — Stack data structure" style={{ minHeight: '100vh', position: 'relative' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px 60px', overflow: 'hidden', zIndex: 1 }}>
+      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '20px 16px', overflow: 'hidden', zIndex: 1 }} className="hero-container">
+        <style>{`
+          @media (min-width: 481px) {
+            .hero-container { padding: 20px 60px !important; }
+          }
+          @media (max-width: 640px) {
+            .hero-stack-row { flex-direction: column !important; gap: 20px !important; }
+            .hero-stack-row .popped-panel { padding-right: 0 !important; }
+            .hero-stack-row .arrow-col { flex-direction: row !important; }
+            .hero-stack-row .arrow-col .pop-label { writing-mode: horizontal-tb !important; transform: none !important; }
+            .hero-stack-row .arrow-col .pop-arrow { transform: rotate(90deg) !important; }
+          }
+        `}</style>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="ds-label" aria-label="Data structure: Stack — Last In, First Out">
           STACK — Last In, First Out
         </motion.div>
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.68rem', color: 'rgba(0,245,255,0.4)', marginBottom: '32px', letterSpacing: '0.1em' }}>
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5 }} style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.68rem', color: 'rgba(0,245,255,0.4)', marginBottom: '24px', letterSpacing: '0.1em' }}>
           Loading portfolio… stack.pop() × 3
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, type: 'spring', stiffness: 200, damping: 24 }}
-          style={{ display: 'flex', alignItems: 'center', gap: '36px', width: '100%', maxWidth: '800px' }}>
+          style={{ display: 'flex', alignItems: 'center', gap: '36px', width: '100%', maxWidth: '800px' }}
+          className="hero-stack-row">
           <PoppedPanel poppedCount={poppedCount} />
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
-            <motion.div animate={{ x: [-4, 4, -4] }} transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }} style={{ fontSize: '1.2rem', color: 'rgba(0,245,255,0.5)' }}>←</motion.div>
-            <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.46rem', color: 'rgba(0,245,255,0.25)', letterSpacing: '0.1em', writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>pop()</div>
+          <div className="arrow-col" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '4px', flexShrink: 0 }}>
+            <motion.div className="pop-arrow" animate={{ x: [-4, 4, -4] }} transition={{ repeat: Infinity, duration: 1.6, ease: 'easeInOut' }} style={{ fontSize: '1.2rem', color: 'rgba(0,245,255,0.5)' }}>←</motion.div>
+            <div className="pop-label" style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: '0.46rem', color: 'rgba(0,245,255,0.25)', letterSpacing: '0.1em', writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>pop()</div>
           </div>
           <StackVisual poppedCount={poppedCount} />
         </motion.div>
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.6 }} style={{ display: 'flex', gap: '16px', marginTop: '36px', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 2.6 }} style={{ display: 'flex', gap: '12px', marginTop: '28px', flexWrap: 'wrap', justifyContent: 'center' }}>
           <a href="#projects" className="btn-glow" id="hero-cta-projects">View Projects</a>
           <a href="#contact" id="hero-cta-contact"
             style={{ display: 'inline-flex', alignItems: 'center', padding: '12px 28px', borderRadius: '999px', border: '1px solid rgba(232,240,255,0.15)', background: 'transparent', color: 'rgba(232,240,255,0.7)', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem', transition: 'all 0.3s ease' }}

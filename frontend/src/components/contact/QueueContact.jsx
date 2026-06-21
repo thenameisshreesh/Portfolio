@@ -257,10 +257,15 @@ export default function QueueContact() {
           display: 'flex', flexDirection: 'column', gap: '16px',
           background: 'rgba(255,255,255,0.03)',
           border: '1px solid rgba(0,245,255,0.08)',
-          borderRadius: '20px', padding: '36px',
+          borderRadius: '20px', padding: '24px',
         }}
       >
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }} className="contact-form-grid">
+          <style>{`
+            @media (min-width: 480px) {
+              .contact-form-grid { grid-template-columns: 1fr 1fr !important; }
+            }
+          `}</style>
           <div>
             <label htmlFor="contact-name" style={{ fontSize: '0.75rem', color: 'rgba(232,240,255,0.5)', marginBottom: '6px', display: 'block' }}>
               Name

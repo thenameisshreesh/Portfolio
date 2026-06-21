@@ -7,6 +7,9 @@ export default function CursorGlow() {
   const ring = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
+    // Don't show custom cursor on touch devices
+    if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
     const dot = dotRef.current;
     const ring_ = ringRef.current;
     let animId;
