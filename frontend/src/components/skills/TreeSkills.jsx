@@ -122,8 +122,9 @@ export default function TreeSkills() {
     const svg = svgRef.current;
     if (!wrap || !svg) return;
 
+    const isMobile = window.innerWidth < 480;
     const W = Math.min(wrap.clientWidth - 40, 880);
-    const H = 500;
+    const H = isMobile ? Math.min(wrap.clientHeight || 350, 400) : 500;
 
     d3.select(svg).selectAll('*').remove();
     const root = d3.hierarchy(skillTree);

@@ -19,7 +19,6 @@ body {
   color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
-  /* Only hide cursor on devices that have a fine pointer (not touch) */
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -46,12 +45,33 @@ body {
 /* ── Sections ────────────────────────────────────────── */
 .section {
   min-height: 100vh;
-  padding: var(--space-xl) var(--space-md);
+  padding: var(--space-2xl) var(--space-lg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+.section + .section {
+  padding-top: var(--space-3xl);
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: var(--space-xl) var(--space-md);
+    min-height: auto;
+  }
+  .section + .section {
+    padding-top: var(--space-xl);
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .section {
+    padding: var(--space-2xl) var(--space-lg);
+    min-height: auto;
+  }
 }
 
 .section-title {
@@ -90,6 +110,7 @@ body {
   .ds-label {
     font-size: 0.55rem;
     padding: 4px 10px;
+    margin-bottom: var(--space-sm);
   }
 }
 
@@ -123,14 +144,14 @@ body {
   display: inline-flex;
   align-items: center;
   gap: var(--space-sm);
-  padding: 10px 22px;
+  padding: 12px 26px;
   border-radius: var(--radius-full);
   border: 1px solid var(--primary);
   background: var(--primary-dim);
   color: var(--primary);
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   letter-spacing: 0.04em;
   cursor: pointer;
   transition: all var(--ease-normal);
@@ -139,8 +160,8 @@ body {
 
 @media (max-width: 480px) {
   .btn-glow {
-    padding: 8px 18px;
-    font-size: 0.8rem;
+    padding: 10px 20px;
+    font-size: 0.85rem;
   }
 }
 
@@ -159,16 +180,16 @@ body {
   border-radius: var(--radius-md);
   color: var(--text);
   font-family: var(--font-sans);
-  font-size: 0.9rem;
-  padding: 10px 14px;
+  font-size: 0.95rem;
+  padding: 12px 16px;
   outline: none;
   transition: border-color var(--ease-fast), box-shadow var(--ease-fast);
 }
 
 @media (max-width: 480px) {
   .input-neo {
-    font-size: 0.85rem;
-    padding: 9px 12px;
+    font-size: 0.9rem;
+    padding: 10px 14px;
   }
 }
 
@@ -194,17 +215,4 @@ body {
   border-radius: var(--radius-full);
   box-shadow: 0 0 10px var(--primary);
   margin: var(--space-md) 0;
-}
-
-/* ── Responsive Section Padding ──────────────────────── */
-@media (min-width: 481px) and (max-width: 768px) {
-  .section { padding: var(--space-xl) var(--space-md); }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .section { padding: var(--space-2xl) var(--space-lg); }
-}
-
-@media (min-width: 1025px) {
-  .section { padding: var(--space-2xl) var(--space-lg); }
 }

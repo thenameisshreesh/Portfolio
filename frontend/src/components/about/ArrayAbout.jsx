@@ -87,7 +87,7 @@ export default function ArrayAbout() {
           <motion.span key={`key-${activeIndex}`} initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ color: item.color, marginLeft: '4px' }}>"{item.key}"</motion.span>
         </div>
 
-        <div className="array-container" style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', paddingTop: '40px', width: '100%', maxWidth: '100vw', overflowX: 'auto' }}>
+        <div className="array-container" style={{ display: 'flex', alignItems: 'stretch', justifyContent: 'center', paddingTop: '40px', width: '100%', maxWidth: '100vw', overflowX: 'auto', paddingBottom: '20px' }}>
           <style>{`
             @media (max-width: 768px) {
               .array-wrap { overflow-x: auto !important; -webkit-overflow-scrolling: touch; padding-bottom: 20px; }
